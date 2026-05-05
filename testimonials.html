@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials – Milestone Coffee & Pastry Shop</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .all-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .tcard {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      border-bottom: 3px solid transparent;
+    }
+    .tcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-bottom-color: var(--gold); }
+    .tcard-quote { font-size: 3.5rem; color: var(--gold); opacity: 0.15; position: absolute; top: 12px; left: 20px; font-family: Georgia, serif; line-height: 1; }
+    .tcard-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; font-size: 1rem; }
+    .tcard-text { font-family: var(--font-heading); font-size: 0.95rem; color: var(--text-dark); font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+    .tcard-author { display: flex; align-items: center; gap: 12px; }
+    .tcard-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+    .tcard-name { font-weight: 600; font-size: 0.9rem; color: var(--dark-brown); }
+    .tcard-role { font-size: 0.74rem; color: var(--text-gray); }
+    .review-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-bottom: 60px; }
+    .stat-card { background: var(--dark-brown); padding: 28px; border-radius: 14px; text-align: center; }
+    .stat-number { font-family: var(--font-heading); font-size: 2.4rem; color: var(--gold); font-weight: 700; }
+    .stat-label { font-size: 0.75rem; color: rgba(245,230,211,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+    @media(max-width:768px) { .review-stats{grid-template-columns:1fr 1fr;} }
+    @media(max-width:480px) { .all-testimonials-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo-css">
+    <span>M</span>
+  </div>
+  <p class="preloader-text">MILESTONE</p>
+  <p class="preloader-sub">Coffee & Pastry Shop</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">
+          <span class="logo-mark-m">M</span>
+        </div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">MILESTONE</span>
+        <span class="nav-tagline">Coffee & Pastry Shop</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+  <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Guest <span>Reviews</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:rgba(245,230,211,0.6)">Testimonials</span>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<section style="background:var(--dark-brown); padding: 50px 0;">
+  <div class="container">
+    <div class="review-stats">
+      <div class="stat-card reveal delay-1">
+        <div class="stat-number">4.9</div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+      <div class="stat-card reveal delay-2">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Reviews</div>
+      </div>
+      <div class="stat-card reveal delay-3">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+      <div class="stat-card reveal delay-4">
+        <div class="stat-number">10K+</div>
+        <div class="stat-label">Happy Guests</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Carousel -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Featured Reviews</span>
+      <h2 class="section-title">Words from Our <span>Guests</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">⭐</span><span class="divider-line"></span></div>
+    </div>
+
+    <div class="testimonials-wrapper reveal">
+      <div class="testimonials-track">
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">The best cappuccino I've ever had in Dhaka. The atmosphere is absolutely stunning — feels like a luxury hotel café but with such warmth and character. Will definitely be back!</p>
+            <div class="testimonial-author">
+              <img src="images/user-1.jpg" alt="Ayesha" class="testimonial-avatar" />
+              <div class="testimonial-info">
+                <h4>Ayesha Rahman</h4>
+                <span>Regular Guest, Dhaka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Their butter croissants are literally life-changing. The layering, the crunch, the melt — everything is perfect. Paired with their signature latte, it's the perfect morning.</p>
+            <div class="testimonial-author">
+              <img src="images/user-2.jpg" alt="Tariq" class="testimonial-avatar" />
+              <div class="testimonial-info">
+                <h4>Tariq Ahmed</h4>
+                <span>Food Blogger, Chittagong</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Milestone is our go-to spot for family coffee dates. The staff is incredibly warm, the menu is diverse, and the chocolate cake is absolutely divine. Highly recommended!</p>
+            <div class="testimonial-author">
+              <img src="images/user-3.jpg" alt="Nafisa" class="testimonial-avatar" />
+              <div class="testimonial-info">
+                <h4>Nafisa Islam</h4>
+                <span>Teacher, Dhaka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">I came for coffee and left completely in love with the tiramisu. The French macarons are genuinely as good as anything I've tried in Europe. An extraordinary café.</p>
+            <div class="testimonial-author">
+              <img src="images/user-4.jpg" alt="Karim" class="testimonial-avatar" />
+              <div class="testimonial-info">
+                <h4>Karim Hossain</h4>
+                <span>Entrepreneur, Sylhet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Perfect study spot. Amazing cold brew, comfortable seating, and the cinnamon rolls keep me coming back. Milestone is truly a Milestone in Dhaka's café scene.</p>
+            <div class="testimonial-author">
+              <img src="images/user-5.jpg" alt="Priya" class="testimonial-avatar" />
+              <div class="testimonial-info">
+                <h4>Priya Dey</h4>
+                <span>University Student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="testimonial-controls">
+        <button class="testimonial-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots">
+          <span class="testimonial-dot active"></span>
+          <span class="testimonial-dot"></span>
+          <span class="testimonial-dot"></span>
+          <span class="testimonial-dot"></span>
+          <span class="testimonial-dot"></span>
+        </div>
+        <button class="testimonial-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- All Reviews Grid -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">All Reviews</span>
+      <h2 class="section-title">More from Our <span>Community</span></h2>
+    </div>
+    <div class="all-testimonials-grid">
+
+      <div class="tcard reveal delay-1">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">The Pain au Chocolat here rivals anything from a Paris boulangerie. Dark, rich chocolate inside the most perfectly laminated pastry. I order it every single morning.</p>
+        <div class="tcard-author">
+          <img src="images/user-1.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Fatima Begum</div><div class="tcard-role">Chef, Dhaka</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal delay-2">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Came for a business meeting, stayed for two hours because the atmosphere was so perfect. Ordered the Turkish Coffee and the New York Cheesecake. Absolutely world-class.</p>
+        <div class="tcard-author">
+          <img src="images/user-2.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Mohiuddin Sarker</div><div class="tcard-role">Businessman, Chittagong</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal delay-3">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">My daughter's birthday party was at Milestone. They set up beautifully, the team was so caring, and the custom cake was beyond gorgeous. We'll return for every special occasion.</p>
+        <div class="tcard-author">
+          <img src="images/user-3.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Jasmin Akter</div><div class="tcard-role">Mother of 2, Dhaka</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal delay-1">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★☆</div>
+        <p class="tcard-text">Genuinely one of the most elegant cafés in Bangladesh. The Flat White is perfectly extracted, and the Lemon Curd Tart is spectacular. Service is warm and attentive.</p>
+        <div class="tcard-author">
+          <img src="images/user-4.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Rabiul Islam</div><div class="tcard-role">Photographer, Rajshahi</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal delay-2">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">The Iced Matcha Latte is my new obsession. Such high-quality matcha, perfectly balanced with oat milk. And the Blueberry Muffins are spectacular — moist, fluffy, bursting with fruit.</p>
+        <div class="tcard-author">
+          <img src="images/user-5.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Nadia Chowdhury</div><div class="tcard-role">Nutritionist</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal delay-3">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">The Morning Ritual combo is the perfect start to my workday. Cappuccino + croissant + juice for under BDT 400 — it's unbeatable value for this level of quality. Thank you Milestone!</p>
+        <div class="tcard-author">
+          <img src="images/user-1.jpg" alt="" class="tcard-avatar" />
+          <div><div class="tcard-name">Shahriar Khan</div><div class="tcard-role">Software Developer</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--dark-brown);padding:70px 0;text-align:center;">
+  <div class="container">
+    <h2 style="font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px;">
+      Be Part of Our <span style="color:var(--gold);font-style:italic;">Story</span>
+    </h2>
+    <p style="color:rgba(245,230,211,0.7);max-width:460px;margin:0 auto 32px;font-size:0.9rem;">
+      Visit us and experience the warmth and quality of Milestone for yourself. We'd love to earn your five stars.
+    </p>
+    <a href="order.html" class="btn btn-primary" style="font-size:1rem;padding:15px 40px;">
+      <i class="fas fa-coffee"></i> Order Today
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">
+              <span class="logo-mark-m">M</span>
+            </div>
+          </div>
+          <div class="footer-logo-text"><h3>MILESTONE</h3><p>Coffee & Pastry Shop</p></div>
+        </div>
+        <p class="footer-desc">Where every sip and every bite becomes a cherished memory.</p>
+        <div class="footer-socials">
+          <div class="footer-social"><i class="fab fa-facebook-f"></i></div>
+          <div class="footer-social"><i class="fab fa-instagram"></i></div>
+          <div class="footer-social"><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Our Menu</a>
+          <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Our Menu</h4>
+        <div class="footer-links">
+          <a href="menu.html">Espresso & Coffee</a><a href="menu.html">Cold Beverages</a>
+          <a href="menu.html">Pastries</a><a href="menu.html">Cakes & Desserts</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt footer-contact-icon"></i><span>Sector #06, Road #03, Campus No #03, Milestone College, Bangladesh</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone footer-contact-icon"></i><span>01923767687</span></div>
+        <div class="footer-college">
+          <div class="college-badge">M</div>
+          <p><strong>Milestone College</strong>A sister establishment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Milestone Coffee & Pastry Shop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>

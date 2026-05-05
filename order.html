@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Now – Milestone Coffee & Pastry Shop</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .order-page { background: var(--cream-light); }
+    .order-section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .order-section-label::before {
+      content: ''; display: block; width: 30px; height: 2px; background: var(--gold);
+    }
+    .order-step-card {
+      background: var(--white); border-radius: 16px; padding: 28px 32px;
+      box-shadow: var(--shadow-sm); margin-bottom: 24px;
+    }
+    .order-step-card h3 {
+      font-family: var(--font-heading); color: var(--dark-brown);
+      font-size: 1.15rem; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .step-num {
+      width: 28px; height: 28px; background: var(--gold); color: var(--dark-brown);
+      border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+    }
+    .qty-controls { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+    .qty-btn {
+      width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--gold);
+      background: transparent; color: var(--gold); cursor: pointer;
+      font-size: 0.85rem; display: flex; align-items: center; justify-content: center;
+      transition: var(--transition);
+    }
+    .qty-btn:hover { background: var(--gold); color: var(--dark-brown); }
+    .qty-display { font-weight: 700; font-size: 0.9rem; color: var(--dark-brown); min-width: 20px; text-align: center; }
+    .order-item-check { display: flex !important; }
+    .payment-method-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .payment-method-card {
+      border: 2px solid var(--cream-dark); border-radius: 12px; padding: 16px 12px;
+      cursor: pointer; text-align: center; transition: var(--transition);
+    }
+    .payment-method-card:hover, .payment-method-card.active {
+      border-color: var(--gold); background: rgba(200,169,106,0.06);
+    }
+    .payment-method-card .pay-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .payment-method-card h4 { font-size: 0.82rem; font-weight: 600; color: var(--dark-brown); margin-bottom: 2px; }
+    .payment-method-card p { font-size: 0.7rem; color: var(--text-gray); }
+    .payment-method-card.active h4 { color: var(--gold-dark); }
+    .bkash-field { display: none; margin-top: 14px; }
+    .bkash-field.visible { display: block; }
+    .summary-breakdown { margin-bottom: 16px; }
+    .summary-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.85rem; color: rgba(245,230,211,0.7); }
+    .summary-row.total { color: var(--gold); font-weight: 700; font-size: 1rem; border-top: 1px solid rgba(200,169,106,0.3); padding-top: 12px; margin-top: 8px; }
+    @media(max-width:600px) { .payment-method-grid{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body class="order-page">
+
+<div id="preloader">
+  <div class="preloader-logo-css">
+    <span>M</span>
+  </div>
+  <p class="preloader-text">MILESTONE</p>
+  <p class="preloader-sub">Coffee & Pastry Shop</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">
+          <span class="logo-mark-m">M</span>
+        </div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">MILESTONE</span>
+        <span class="nav-tagline">Coffee & Pastry Shop</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+      <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
+      <a href="order.html" class="btn-order active"><i class="fas fa-shopping-bag"></i> Order Now</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+  <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Order <span>Now</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <span style="color:rgba(245,230,211,0.6)">Order Now</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     ORDER PAGE
+══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="order-grid">
+
+      <!-- LEFT: ORDER FORM -->
+      <div>
+        <form id="order-form" novalidate>
+
+          <!-- Step 1: Customer Details -->
+          <div class="order-step-card reveal">
+            <h3><span class="step-num">1</span> Your Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="order-name">Full Name *</label>
+                <input type="text" id="order-name" placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label for="order-phone">Phone Number *</label>
+                <input type="tel" id="order-phone" placeholder="01XXXXXXXXX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="order-address">Delivery Address *</label>
+              <textarea id="order-address" style="min-height:80px;" placeholder="House #, Road #, Area, Dhaka, Bangladesh"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="order-notes">Special Instructions (Optional)</label>
+              <input type="text" id="order-notes" placeholder="e.g. Extra sugar, no ice..." />
+            </div>
+          </div>
+
+          <!-- Step 2: Select Items -->
+          <div class="order-step-card reveal">
+            <h3><span class="step-num">2</span> Select Items</h3>
+            <p style="font-size:0.82rem;color:var(--text-gray);margin-bottom:16px;">Tap any item to add it to your order. Tap again to remove.</p>
+
+            <div class="order-section-label">☕ Coffees</div>
+            <div class="order-items-grid">
+              <div class="order-item" data-id="i1" data-name="Classic Espresso" data-price="120">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&q=75" alt="Espresso" />
+                <div class="order-item-name">Classic Espresso</div>
+                <div class="order-item-price">BDT 120</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i2" data-name="Cappuccino" data-price="180">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=300&q=75" alt="Cappuccino" />
+                <div class="order-item-name">Cappuccino</div>
+                <div class="order-item-price">BDT 180</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i3" data-name="Signature Latte" data-price="200">
+                <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=300&q=75" alt="Latte" />
+                <div class="order-item-name">Signature Latte</div>
+                <div class="order-item-price">BDT 200</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i4" data-name="Dark Mocha" data-price="220">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&q=75" alt="Mocha" />
+                <div class="order-item-name">Dark Mocha</div>
+                <div class="order-item-price">BDT 220</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i5" data-name="Caramel Macchiato" data-price="230">
+                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=300&q=75" alt="Macchiato" />
+                <div class="order-item-name">Caramel Macchiato</div>
+                <div class="order-item-price">BDT 230</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i6" data-name="Iced Caramel Latte" data-price="240">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&q=75" alt="Iced Latte" />
+                <div class="order-item-name">Iced Caramel Latte</div>
+                <div class="order-item-price">BDT 240</div>
+                <div class="order-item-check">✓</div>
+              </div>
+            </div>
+
+            <div class="order-section-label" style="margin-top:20px;">🥐 Pastries</div>
+            <div class="order-items-grid">
+              <div class="order-item" data-id="i7" data-name="Butter Croissant" data-price="150">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300&q=75" alt="Croissant" />
+                <div class="order-item-name">Butter Croissant</div>
+                <div class="order-item-price">BDT 150</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i8" data-name="Glazed Donut" data-price="120">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&q=75" alt="Donut" />
+                <div class="order-item-name">Glazed Donut</div>
+                <div class="order-item-price">BDT 120</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i9" data-name="Cinnamon Roll" data-price="160">
+                <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=300&q=75" alt="Cinnamon Roll" />
+                <div class="order-item-name">Cinnamon Roll</div>
+                <div class="order-item-price">BDT 160</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i10" data-name="Fudge Brownie" data-price="160">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&q=75" alt="Brownie" />
+                <div class="order-item-name">Fudge Brownie</div>
+                <div class="order-item-price">BDT 160</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i11" data-name="Blueberry Muffin" data-price="140">
+                <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=300&q=75" alt="Muffin" />
+                <div class="order-item-name">Blueberry Muffin</div>
+                <div class="order-item-price">BDT 140</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i12" data-name="Signature Choco Cake" data-price="350">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&q=75" alt="Cake" />
+                <div class="order-item-name">Choco Cake Slice</div>
+                <div class="order-item-price">BDT 350</div>
+                <div class="order-item-check">✓</div>
+              </div>
+            </div>
+
+            <div class="order-section-label" style="margin-top:20px;">⭐ Special Combos</div>
+            <div class="order-items-grid">
+              <div class="order-item" data-id="i13" data-name="Morning Ritual Combo" data-price="380">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&q=75" alt="Morning Combo" />
+                <div class="order-item-name">Morning Ritual</div>
+                <div class="order-item-price">BDT 380</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i14" data-name="Sweet Indulgence Combo" data-price="500">
+                <img src="https://images.unsplash.com/photo-1551024250-c3a8d1696b44?w=300&q=75" alt="Sweet Combo" />
+                <div class="order-item-name">Sweet Indulgence</div>
+                <div class="order-item-price">BDT 500</div>
+                <div class="order-item-check">✓</div>
+              </div>
+              <div class="order-item" data-id="i15" data-name="Weekend Brunch Combo" data-price="420">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&q=75" alt="Brunch Combo" />
+                <div class="order-item-name">Weekend Brunch</div>
+                <div class="order-item-price">BDT 420</div>
+                <div class="order-item-check">✓</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment -->
+          <div class="order-step-card reveal">
+            <h3><span class="step-num">3</span> Payment Method</h3>
+            <div class="payment-method-grid">
+              <div class="payment-method-card active" data-payment="cod" onclick="selectPayment(this,'cod')">
+                <div class="pay-icon">💵</div>
+                <h4>Cash on Delivery</h4>
+                <p>Pay when you receive</p>
+              </div>
+              <div class="payment-method-card" data-payment="bkash" onclick="selectPayment(this,'bkash')">
+                <div class="pay-icon">📱</div>
+                <h4>bKash</h4>
+                <p>Mobile banking</p>
+              </div>
+              <div class="payment-method-card" data-payment="nagad" onclick="selectPayment(this,'nagad')">
+                <div class="pay-icon">🟠</div>
+                <h4>Nagad</h4>
+                <p>Digital wallet</p>
+              </div>
+            </div>
+
+            <div class="bkash-field" id="bkash-field">
+              <div class="form-group" style="margin-top:16px;margin-bottom:0;">
+                <label>bKash / Nagad Number</label>
+                <input type="tel" id="payment-number" placeholder="01XXXXXXXXX — Send money to this number first" />
+                <p style="font-size:0.74rem;color:var(--text-gray);margin-top:6px;">
+                  📍 Send your payment to: <strong>01923767687</strong> then enter your transaction ID below.
+                </p>
+              </div>
+              <div class="form-group" style="margin-top:12px;margin-bottom:0;">
+                <label>Transaction ID</label>
+                <input type="text" id="trx-id" placeholder="Enter bKash / Nagad Transaction ID" />
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:18px;">
+            <i class="fas fa-check-circle"></i> Confirm Order
+          </button>
+        </form>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div>
+        <div class="order-summary-card reveal-right">
+          <h3>🛒 Order Summary</h3>
+
+          <div id="order-items-list" class="summary-items">
+            <p class="summary-empty">No items selected yet.<br />Select items from the left to build your order.</p>
+          </div>
+
+          <div class="summary-breakdown" id="summary-breakdown" style="display:none;">
+            <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">BDT 0</span></div>
+            <div class="summary-row"><span>Delivery</span><span>BDT 50</span></div>
+            <div class="summary-row total"><span>Total</span><span id="order-total">BDT 0</span></div>
+          </div>
+
+          <div style="border-top:1px solid rgba(200,169,106,0.2);padding-top:16px;margin-top:8px;">
+            <p style="font-size:0.75rem;color:rgba(245,230,211,0.5);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Selected Payment</p>
+            <p id="selected-payment-display" style="color:var(--gold);font-weight:600;font-size:0.88rem;">💵 Cash on Delivery</p>
+          </div>
+
+          <div style="margin-top:20px;padding:16px;background:rgba(200,169,106,0.08);border-radius:10px;border:1px solid rgba(200,169,106,0.2);">
+            <p style="font-size:0.78rem;color:rgba(245,230,211,0.7);line-height:1.7;">
+              📍 <strong style="color:var(--gold);">Delivery Area:</strong> Dhaka, Bangladesh<br />
+              🕐 <strong style="color:var(--gold);">Delivery Time:</strong> 30–45 minutes<br />
+              📞 <strong style="color:var(--gold);">Support:</strong> 01923767687
+            </p>
+          </div>
+
+          <div style="margin-top:20px;">
+            <p style="font-size:0.72rem;color:rgba(245,230,211,0.4);text-align:center;line-height:1.6;">
+              By placing your order you agree to our Terms & Conditions. All items are freshly prepared and non-refundable once dispatched.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">
+              <span class="logo-mark-m">M</span>
+            </div>
+          </div>
+          <div class="footer-logo-text"><h3>MILESTONE</h3><p>Coffee & Pastry Shop</p></div>
+        </div>
+        <p class="footer-desc">Where every sip and every bite becomes a cherished memory.</p>
+        <div class="footer-socials">
+          <div class="footer-social"><i class="fab fa-facebook-f"></i></div>
+          <div class="footer-social"><i class="fab fa-instagram"></i></div>
+          <div class="footer-social"><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Our Menu</a>
+          <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Our Menu</h4>
+        <div class="footer-links">
+          <a href="menu.html">Espresso & Coffee</a><a href="menu.html">Cold Beverages</a>
+          <a href="menu.html">Pastries</a><a href="menu.html">Cakes & Desserts</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt footer-contact-icon"></i><span>Sector #06, Road #03, Campus No #03, Milestone College, Bangladesh</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone footer-contact-icon"></i><span>01923767687</span></div>
+        <div class="footer-college">
+          <div class="college-badge">M</div>
+          <p><strong>Milestone College</strong>A sister establishment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Milestone Coffee & Pastry Shop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+<script>
+// Payment method selection
+function selectPayment(el, method) {
+  document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedPayment = method;
+
+  const bkashField = document.getElementById('bkash-field');
+  const display = document.getElementById('selected-payment-display');
+
+  if (method === 'bkash') {
+    bkashField.classList.add('visible');
+    if (display) display.textContent = '📱 bKash';
+  } else if (method === 'nagad') {
+    bkashField.classList.add('visible');
+    if (display) display.textContent = '🟠 Nagad';
+  } else {
+    bkashField.classList.remove('visible');
+    if (display) display.textContent = '💵 Cash on Delivery';
+  }
+}
+
+// Override updateOrderSummary to include delivery charge
+const _origUpdate = typeof updateOrderSummary !== 'undefined' ? updateOrderSummary : null;
+
+function updateOrderSummaryExtended() {
+  const summaryEl = document.getElementById('order-items-list');
+  const totalEl = document.getElementById('order-total');
+  const subtotalEl = document.getElementById('summary-subtotal');
+  const breakdown = document.getElementById('summary-breakdown');
+  if (!summaryEl) return;
+
+  if (selectedItems.size === 0) {
+    summaryEl.innerHTML = '<p class="summary-empty">No items selected yet.<br />Select items from the left to build your order.</p>';
+    if (totalEl) totalEl.textContent = 'BDT 0';
+    if (breakdown) breakdown.style.display = 'none';
+    return;
+  }
+
+  if (breakdown) breakdown.style.display = 'block';
+
+  let subtotal = 0;
+  let html = '';
+  selectedItems.forEach(item => {
+    subtotal += item.price;
+    html += `<div class="summary-item">
+      <span class="summary-item-name">${item.name}</span>
+      <span class="summary-item-price">BDT ${item.price}</span>
+    </div>`;
+  });
+
+  summaryEl.innerHTML = html;
+  if (subtotalEl) subtotalEl.textContent = `BDT ${subtotal}`;
+  if (totalEl) totalEl.textContent = `BDT ${subtotal + 50}`;
+}
+
+// Override the base updateOrderSummary
+window.addEventListener('DOMContentLoaded', () => {
+  // Patch after script.js loads
+  const orderItems = document.querySelectorAll('.order-item');
+  orderItems.forEach(item => {
+    item.addEventListener('click', () => {
+      setTimeout(updateOrderSummaryExtended, 10);
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Milestone Coffee & Pastry Shop</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 28px; }
+    .team-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); text-align: center; transition: var(--transition); }
+    .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .team-card img { width: 100%; height: 240px; object-fit: cover; }
+    .team-card-body { padding: 20px; }
+    .team-card-body h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--dark-brown); margin-bottom: 4px; }
+    .team-card-body span { font-size: 0.78rem; color: var(--gold-dark); text-transform: uppercase; letter-spacing: 1px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .value-card { background: var(--white); border-radius: 16px; padding: 36px 28px; text-align: center; box-shadow: var(--shadow-sm); transition: var(--transition); border-top: 4px solid transparent; }
+    .value-card:hover { border-top-color: var(--gold); transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .value-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .value-card h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--dark-brown); margin-bottom: 10px; }
+    .value-card p { font-size: 0.85rem; color: var(--text-gray); line-height: 1.7; }
+    .milestone-timeline { position: relative; padding: 20px 0; }
+    .milestone-timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--cream-dark); transform:translateX(-50%); }
+    .timeline-item { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 20px; align-items: center; margin-bottom: 48px; }
+    .timeline-content { background: var(--white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .timeline-content.right { grid-column: 3; }
+    .timeline-dot { width: 44px; height: 44px; background: var(--dark-brown); border: 4px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.8rem; font-weight: 700; z-index: 1; justify-self: center; }
+    .timeline-year { font-family: var(--font-heading); font-size: 1.3rem; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+    .timeline-title { font-weight: 600; color: var(--dark-brown); font-size: 0.95rem; margin-bottom: 6px; }
+    .timeline-text { font-size: 0.82rem; color: var(--text-gray); line-height: 1.6; }
+    @media(max-width:768px) { .values-grid{grid-template-columns:1fr 1fr;} .milestone-timeline::before{left:20px;} .timeline-item{grid-template-columns:40px 1fr; grid-template-rows:auto;} .timeline-dot{width:36px;height:36px;font-size:0.7rem;} .timeline-content.right{grid-column:2;} }
+    @media(max-width:480px) { .values-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo-css">
+    <span>M</span>
+  </div>
+  <p class="preloader-text">MILESTONE</p>
+  <p class="preloader-sub">Coffee & Pastry Shop</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">
+          <span class="logo-mark-m">M</span>
+        </div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">MILESTONE</span>
+        <span class="nav-tagline">Coffee & Pastry Shop</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+  <a href="order.html">Order Now</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>About <span>Us</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:rgba(245,230,211,0.6)">About</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Our Story ── -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrapper reveal-left">
+        <img src="images/about-image.jpg" alt="Our Story" class="about-image-main" />
+        <div class="about-stats">
+          <div class="about-stats-number">10K+</div>
+          <div class="about-stats-label">Happy Guests</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="section-header">
+          <span class="section-label">Our Origin</span>
+          <h2 class="section-title">A Story Brewed in <span>Passion</span></h2>
+        </div>
+        <p class="about-text">
+          Founded with a singular vision — to create an extraordinary coffee and pastry experience in Bangladesh — Milestone Coffee & Pastry Shop opened its doors with the dream of bringing the elegance of European café culture to Dhaka.
+        </p>
+        <p class="about-text">
+          Every element of our shop, from the carefully sourced single-origin coffee beans to the handcrafted pastries made fresh each morning, reflects our commitment to quality. We partner with premium roasters and local artisan bakers to deliver an experience that's truly one of a kind.
+        </p>
+        <p class="about-text">
+          Proudly connected with Milestone College, we represent a community of excellence, creativity, and aspiration — values that are baked into everything we do.
+        </p>
+        <a href="order.html" class="btn btn-primary" style="margin-top:8px;"><i class="fas fa-coffee"></i> Order Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Our Values ── -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What We Stand For</span>
+      <h2 class="section-title">Our Core <span>Values</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">☕</span><span class="divider-line"></span></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal delay-1">
+        <div class="value-icon">☕</div>
+        <h3>Quality First</h3>
+        <p>Every bean, every flour, every ingredient is selected with uncompromising quality standards. We never cut corners on what matters most.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="value-icon">💛</div>
+        <h3>Warmth & Care</h3>
+        <p>We greet every guest like family. Our team is trained to deliver hospitality that feels genuine, personal, and memorable.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="value-icon">🌿</div>
+        <h3>Sustainability</h3>
+        <p>We're committed to ethical sourcing, minimal waste, and supporting local farmers and suppliers in Bangladesh.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <div class="value-icon">🎨</div>
+        <h3>Artisan Craft</h3>
+        <p>Each pastry is shaped by hand, each coffee pulled with expertise. Artisanship is at the heart of everything we create.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="value-icon">🏆</div>
+        <h3>Excellence</h3>
+        <p>We're constantly refining, improving, and innovating to ensure every visit to Milestone exceeds your expectations.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="value-icon">🤝</div>
+        <h3>Community</h3>
+        <p>Rooted in the Milestone College campus, we're proud to be a gathering place for students, faculty, and families.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Our Team ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The People Behind</span>
+      <h2 class="section-title">Meet Our <span>Team</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">🌟</span><span class="divider-line"></span></div>
+      <p class="section-subtitle">Our passionate team of baristas, bakers, and hospitality professionals are dedicated to making your Milestone experience unforgettable.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal delay-1">
+        <img src="images/user-1.jpg" alt="Head Barista" />
+        <div class="team-card-body">
+          <h3>Rahim Chowdhury</h3>
+          <span>Head Barista</span>
+        </div>
+      </div>
+      <div class="team-card reveal delay-2">
+        <img src="images/user-2.jpg" alt="Pastry Chef" />
+        <div class="team-card-body">
+          <h3>Sadia Sultana</h3>
+          <span>Head Pastry Chef</span>
+        </div>
+      </div>
+      <div class="team-card reveal delay-3">
+        <img src="images/user-3.jpg" alt="Store Manager" />
+        <div class="team-card-body">
+          <h3>Karim Abdullah</h3>
+          <span>Store Manager</span>
+        </div>
+      </div>
+      <div class="team-card reveal delay-4">
+        <img src="images/user-4.jpg" alt="Hospitality Lead" />
+        <div class="team-card-body">
+          <h3>Nusrat Jahan</h3>
+          <span>Hospitality Lead</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Timeline ── -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Journey</span>
+      <h2 class="section-title">Milestones in Our <span>Story</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">🏆</span><span class="divider-line"></span></div>
+    </div>
+    <div class="milestone-timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-title">The Beginning</div>
+          <p class="timeline-text">Milestone Coffee & Pastry Shop opened its first location at Milestone College campus, serving premium coffee and fresh pastries to the community.</p>
+        </div>
+        <div class="timeline-dot">1</div>
+        <div></div>
+      </div>
+      <div class="timeline-item">
+        <div></div>
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content right">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-title">Online Ordering Launched</div>
+          <p class="timeline-text">We introduced our online order platform, making it easier for guests to enjoy Milestone from home with delivery across Dhaka.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-title">Menu Expansion</div>
+          <p class="timeline-text">We expanded our menu to include 30+ premium coffee and pastry options, inspired by international café culture and local Bangladeshi flavours.</p>
+        </div>
+        <div class="timeline-dot">3</div>
+        <div></div>
+      </div>
+      <div class="timeline-item">
+        <div></div>
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content right">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">Award Recognition</div>
+          <p class="timeline-text">Recognized as one of Dhaka's top boutique coffee experiences, with over 10,000 happy guests and countless five-star reviews.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ── -->
+<section style="background: var(--dark-brown); padding: 60px 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;">
+      <div class="reveal delay-1">
+        <div style="font-family:var(--font-heading);font-size:3rem;color:var(--gold);font-weight:700;">10K+</div>
+        <p style="color:rgba(245,230,211,0.6);font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Happy Guests</p>
+      </div>
+      <div class="reveal delay-2">
+        <div style="font-family:var(--font-heading);font-size:3rem;color:var(--gold);font-weight:700;">30+</div>
+        <p style="color:rgba(245,230,211,0.6);font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Menu Items</p>
+      </div>
+      <div class="reveal delay-3">
+        <div style="font-family:var(--font-heading);font-size:3rem;color:var(--gold);font-weight:700;">5+</div>
+        <p style="color:rgba(245,230,211,0.6);font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Years of Craft</p>
+      </div>
+      <div class="reveal delay-4">
+        <div style="font-family:var(--font-heading);font-size:3rem;color:var(--gold);font-weight:700;">100%</div>
+        <p style="color:rgba(245,230,211,0.6);font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Fresh Daily</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">
+              <span class="logo-mark-m">M</span>
+            </div>
+          </div>
+          <div class="footer-logo-text"><h3>MILESTONE</h3><p>Coffee & Pastry Shop</p></div>
+        </div>
+        <p class="footer-desc">Where every sip and every bite becomes a cherished memory.</p>
+        <div class="footer-socials">
+          <div class="footer-social"><i class="fab fa-facebook-f"></i></div>
+          <div class="footer-social"><i class="fab fa-instagram"></i></div>
+          <div class="footer-social"><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Our Menu</a>
+          <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Menu</h4>
+        <div class="footer-links">
+          <a href="menu.html">Espresso & Coffee</a><a href="menu.html">Cold Beverages</a>
+          <a href="menu.html">Croissants</a><a href="menu.html">Cakes & Tortes</a><a href="menu.html">Donuts</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt footer-contact-icon"></i><span>Sector #06, Road #03, Campus No #03, Milestone College, Bangladesh</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone footer-contact-icon"></i><span>01923767687</span></div>
+        <div class="footer-college">
+          <div class="college-badge">M</div>
+          <p><strong>Milestone College</strong>A sister establishment by Milestone Education Group</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Milestone Coffee & Pastry Shop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>

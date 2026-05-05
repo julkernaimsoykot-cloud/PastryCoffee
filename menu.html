@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu – Milestone Coffee & Pastry Shop</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo-css">
+    <span>M</span>
+  </div>
+  <p class="preloader-text">MILESTONE</p>
+  <p class="preloader-sub">Coffee & Pastry Shop</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">
+          <span class="logo-mark-m">M</span>
+        </div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">MILESTONE</span>
+        <span class="nav-tagline">Coffee & Pastry Shop</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+  <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Our <span>Menu</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:rgba(245,230,211,0.6)">Menu</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MENU SECTION
+══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Artisan Selection</span>
+      <h2 class="section-title">Our <span>Full Menu</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">☕</span><span class="divider-line"></span></div>
+      <p class="section-subtitle">Over 30 handcrafted coffee drinks and artisan pastries, freshly prepared every day with the finest ingredients.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-filter="all">All Items</button>
+      <button class="menu-tab" data-filter="espresso">Espresso & Coffee</button>
+      <button class="menu-tab" data-filter="cold">Cold Beverages</button>
+      <button class="menu-tab" data-filter="pastry">Pastries</button>
+      <button class="menu-tab" data-filter="cake">Cakes & Desserts</button>
+      <button class="menu-tab" data-filter="combo">Special Combos</button>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- ═══ ESPRESSO & HOT COFFEE ═══ -->
+
+      <div class="menu-card reveal delay-1" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80" alt="Classic Espresso" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Espresso</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Classic Espresso</h3>
+          <p class="menu-card-desc">Pure arabica shot, bold and aromatic with a rich golden crema. Intense, clean finish.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 120</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=600&q=80" alt="Cappuccino" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Velvety Cappuccino</h3>
+          <p class="menu-card-desc">Equal parts espresso, steamed milk, and microfoam. Perfect balance of bold and silky.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 180</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&q=80" alt="Latte" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Signature Latte</h3>
+          <p class="menu-card-desc">Smooth espresso with steamed whole milk and a light, velvety layer of microfoam art.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 200</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Mocha" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Dark Mocha</h3>
+          <p class="menu-card-desc">Espresso, rich dark chocolate, and steamed milk topped with whipped cream rosette.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 220</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-1" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80" alt="Flat White" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Flat White</h3>
+          <p class="menu-card-desc">Ristretto shots with micro-textured steamed milk. Strong, smooth, and silky.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 190</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1587080413959-06b859fb107d?w=600&q=80" alt="Americano" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Long Americano</h3>
+          <p class="menu-card-desc">Double espresso over hot water. Clean, strong, and deeply satisfying.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 150</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80" alt="Macchiato" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Espresso</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Caramel Macchiato</h3>
+          <p class="menu-card-desc">Vanilla-infused steamed milk, espresso, and a caramel drizzle. Sweet meets bold.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 230</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="espresso">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Turkish Coffee" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Coffee</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Turkish Coffee</h3>
+          <p class="menu-card-desc">Finely ground coffee brewed in a copper cezve. Thick, rich, and authentic.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 140</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ COLD BEVERAGES ═══ -->
+
+      <div class="menu-card reveal delay-1" data-category="cold">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="Iced Latte" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Cold Brew</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Iced Caramel Latte</h3>
+          <p class="menu-card-desc">Chilled espresso over ice with cold milk and a caramel swirl. Refreshing perfection.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 240</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="cold">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&q=80" alt="Cold Brew" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Cold Brew</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Signature Cold Brew</h3>
+          <p class="menu-card-desc">18-hour steeped cold brew concentrate. Smooth, low acidity, rich and complex.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 260</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="cold">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600&q=80" alt="Frappuccino" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Frappe</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Mocha Frappuccino</h3>
+          <p class="menu-card-desc">Blended coffee, chocolate, ice, topped with whipped cream and chocolate shavings.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 280</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="cold">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Matcha Latte" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Specialty</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Iced Matcha Latte</h3>
+          <p class="menu-card-desc">Ceremonial grade matcha whisked with cold oat milk over ice. Vibrant and earthy.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 250</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PASTRIES ═══ -->
+
+      <div class="menu-card reveal delay-1" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Butter Croissant" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Pastry</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Butter Croissant</h3>
+          <p class="menu-card-desc">Hand-laminated 72 times with premium French butter. Shatteringly crisp, melt-in-mouth.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 150</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=600&q=80" alt="Almond Croissant" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Pastry</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Almond Croissant</h3>
+          <p class="menu-card-desc">Twice-baked with almond cream frangipane filling, flaked almonds, and icing sugar.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 200</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Glazed Donut" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Donut</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Classic Glazed Donut</h3>
+          <p class="menu-card-desc">Pillowy soft, yeast-raised donut with a honey-vanilla glaze. Light and irresistible.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 120</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&q=80" alt="Chocolate Donut" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Donut</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Chocolate Sprinkle Donut</h3>
+          <p class="menu-card-desc">Rich dark chocolate ganache glaze with rainbow sprinkles. A colourful crowd favourite.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 130</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-1" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&q=80" alt="Cinnamon Roll" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Pastry</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Cinnamon Roll</h3>
+          <p class="menu-card-desc">Warm, gooey rolls with cinnamon sugar swirl, drizzled with cream cheese icing.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 160</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Pain au Chocolat" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Pastry</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Pain au Chocolat</h3>
+          <p class="menu-card-desc">Buttery laminated dough enveloping two sticks of finest dark Belgian chocolate.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 180</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=600&q=80" alt="Muffin" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Baked</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Blueberry Muffin</h3>
+          <p class="menu-card-desc">Moist, domed muffin bursting with fresh blueberries and a golden sugar crust on top.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 140</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="pastry">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Brownie" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Baked</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Fudge Brownie</h3>
+          <p class="menu-card-desc">Dense, rich, extra-fudgy brownie made with 70% dark chocolate. Intensely satisfying.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 160</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CAKES & DESSERTS ═══ -->
+
+      <div class="menu-card reveal delay-1" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Chocolate Cake" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Cake</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Signature Choco Cake</h3>
+          <p class="menu-card-desc">Dark chocolate sponge layers with silky Belgian ganache and cocoa buttercream.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 350</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&q=80" alt="Cheesecake" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Dessert</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">New York Cheesecake</h3>
+          <p class="menu-card-desc">Dense and creamy baked cheesecake on a buttery graham cracker crust. Simply divine.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 320</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Red Velvet" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Cake</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Red Velvet Slice</h3>
+          <p class="menu-card-desc">Velvety red cocoa layers with tangy cream cheese frosting. An iconic beauty.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 300</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80" alt="Tiramisu" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Dessert</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Classic Tiramisu</h3>
+          <p class="menu-card-desc">Espresso-soaked ladyfingers with mascarpone cream and a dusting of fine cocoa.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 280</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-1" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Macaron" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Petit Four</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">French Macarons (3pc)</h3>
+          <p class="menu-card-desc">Delicate almond meringue shells with flavoured ganache: rose, pistachio, salted caramel.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 200</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1555214474-b04dde5c4e38?w=600&q=80" alt="Tart" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">Tart</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Lemon Curd Tart</h3>
+          <p class="menu-card-desc">Crisp shortcrust shell filled with zingy lemon curd and torched Italian meringue.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 250</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80" alt="Eclair" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">French</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Chocolate Éclair</h3>
+          <p class="menu-card-desc">Choux pastry filled with vanilla pastry cream and dipped in dark chocolate glaze.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 220</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="cake">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?w=600&q=80" alt="Choux" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">French</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Paris-Brest</h3>
+          <p class="menu-card-desc">Ring-shaped choux with hazelnut praline cream, almonds, and icing sugar. Spectacular.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 320</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SPECIAL COMBOS ═══ -->
+
+      <div class="menu-card reveal delay-1" data-category="combo">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=80" alt="Morning Combo" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">⭐ Combo</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Morning Ritual</h3>
+          <p class="menu-card-desc">Cappuccino + Butter Croissant + Fresh Orange Juice. The perfect start to any day.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 380</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-2" data-category="combo">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1551024250-c3a8d1696b44?w=600&q=80" alt="Sweet Indulgence" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">⭐ Combo</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Sweet Indulgence</h3>
+          <p class="menu-card-desc">Latte + Chocolate Cake Slice + Fudge Brownie. For when you deserve the best.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 500</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-3" data-category="combo">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&q=80" alt="Afternoon Tea" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">⭐ Combo</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Afternoon Tea Set</h3>
+          <p class="menu-card-desc">English tea + 3 French Macarons + 1 Lemon Tart. Elegant and refined.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 450</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal delay-4" data-category="combo">
+        <div style="overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Brunch Combo" class="menu-card-img" />
+        </div>
+        <span class="menu-card-badge">⭐ Combo</span>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">Weekend Brunch</h3>
+          <p class="menu-card-desc">Americano + Almond Croissant + Blueberry Muffin + seasonal fruit. Weekend sorted.</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">BDT 420</span>
+            <button class="menu-card-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end menu-grid -->
+
+    <div style="text-align:center;margin-top:60px;">
+      <a href="order.html" class="btn btn-primary" style="font-size:1rem;padding:16px 44px;">
+        <i class="fas fa-shopping-bag"></i> Place Your Order
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">
+              <span class="logo-mark-m">M</span>
+            </div>
+          </div>
+          <div class="footer-logo-text"><h3>MILESTONE</h3><p>Coffee & Pastry Shop</p></div>
+        </div>
+        <p class="footer-desc">Where every sip and every bite becomes a cherished memory.</p>
+        <div class="footer-socials">
+          <div class="footer-social"><i class="fab fa-facebook-f"></i></div>
+          <div class="footer-social"><i class="fab fa-instagram"></i></div>
+          <div class="footer-social"><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Our Menu</a>
+          <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Categories</h4>
+        <div class="footer-links">
+          <a href="#">Espresso & Coffee</a><a href="#">Cold Beverages</a><a href="#">Pastries</a>
+          <a href="#">Cakes & Desserts</a><a href="#">Special Combos</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt footer-contact-icon"></i><span>Sector #06, Road #03, Campus No #03, Milestone College, Bangladesh</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone footer-contact-icon"></i><span>01923767687</span></div>
+        <div class="footer-college">
+          <div class="college-badge">M</div>
+          <p><strong>Milestone College</strong>A sister establishment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Milestone Coffee & Pastry Shop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>

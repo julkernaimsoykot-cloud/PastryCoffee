@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Milestone Coffee & Pastry Shop</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo-css">
+    <span>M</span>
+  </div>
+  <p class="preloader-text">MILESTONE</p>
+  <p class="preloader-sub">Coffee & Pastry Shop</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">
+          <span class="logo-mark-m">M</span>
+        </div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">MILESTONE</span>
+        <span class="nav-tagline">Coffee & Pastry Shop</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+  <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Get in <span>Touch</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <span style="color:rgba(245,230,211,0.6)">Contact</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Contact Section ── -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Reach Out</span>
+      <h2 class="section-title">We'd Love to <span>Hear From You</span></h2>
+      <div class="divider"><span class="divider-line"></span><span class="divider-icon">☕</span><span class="divider-line"></span></div>
+      <p class="section-subtitle">Whether you have a question, want to make a reservation, or just want to say hello — we're always ready for a good conversation.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="contact-info-card reveal-left">
+        <h3>Contact Information</h3>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-text">
+            <h4>Our Location</h4>
+            <p>Sector #06, Road #03, Campus No #03<br />Milestone College, Dhaka, Bangladesh</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div class="contact-info-text">
+            <h4>Phone Number</h4>
+            <p>01923767687</p>
+            <p style="font-size:0.78rem;opacity:0.6;margin-top:2px;">Available 7:00 AM – 10:00 PM</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div class="contact-info-text">
+            <h4>Email Address</h4>
+            <p>hello@milestonecoffee.com.bd</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">🕐</div>
+          <div class="contact-info-text">
+            <h4>Opening Hours</h4>
+            <p>Monday – Friday: 7:00 AM – 10:00 PM</p>
+            <p>Saturday – Sunday: 8:00 AM – 11:00 PM</p>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <div class="social-btn"><i class="fab fa-facebook-f"></i></div>
+          <div class="social-btn"><i class="fab fa-instagram"></i></div>
+          <div class="social-btn"><i class="fab fa-twitter"></i></div>
+          <div class="social-btn"><i class="fab fa-whatsapp"></i></div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrapper reveal-right">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Your Name *</label>
+              <input type="text" id="contact-name" placeholder="e.g. Ayesha Rahman" />
+              <span class="form-error" id="name-err">Please enter your name</span>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" placeholder="email@example.com" />
+              <span class="form-error" id="email-err">Please enter a valid email</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-phone">Phone Number *</label>
+            <input type="tel" id="contact-phone" placeholder="01XXXXXXXXX" />
+            <span class="form-error" id="phone-err">Please enter your phone number</span>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <select id="contact-subject">
+              <option value="">Select a subject...</option>
+              <option>General Inquiry</option>
+              <option>Order Question</option>
+              <option>Feedback / Review</option>
+              <option>Event / Catering</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Your Message *</label>
+            <textarea id="contact-message" placeholder="Write your message here..."></textarea>
+            <span class="form-error" id="message-err">Please enter your message</span>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+        <!-- Map -->
+        <div class="map-placeholder">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8!2d90.37!3d23.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ5JzE2LjAiTiA5MMKwMjInMTIuMCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Questions</span>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto;" class="reveal">
+      <details style="background:var(--white);border-radius:12px;padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow-sm);cursor:pointer;">
+        <summary style="font-weight:600;color:var(--dark-brown);font-size:0.95rem;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+          Do you offer delivery? <i class="fas fa-plus" style="color:var(--gold);font-size:0.8rem;"></i>
+        </summary>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--text-gray);line-height:1.7;">Yes! We offer same-day delivery across Dhaka. Simply place your order through our Order page, pay via bKash, Nagad, or cash on delivery, and we'll bring Milestone to your door.</p>
+      </details>
+
+      <details style="background:var(--white);border-radius:12px;padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow-sm);cursor:pointer;">
+        <summary style="font-weight:600;color:var(--dark-brown);font-size:0.95rem;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+          Can I book a table in advance? <i class="fas fa-plus" style="color:var(--gold);font-size:0.8rem;"></i>
+        </summary>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--text-gray);line-height:1.7;">Absolutely. Call us at 01923767687 or send us a message through the contact form above and we'll arrange a reserved table for you and your guests.</p>
+      </details>
+
+      <details style="background:var(--white);border-radius:12px;padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow-sm);cursor:pointer;">
+        <summary style="font-weight:600;color:var(--dark-brown);font-size:0.95rem;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+          Do you do custom cakes for events? <i class="fas fa-plus" style="color:var(--gold);font-size:0.8rem;"></i>
+        </summary>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--text-gray);line-height:1.7;">Yes! Our pastry team creates stunning custom cakes for birthdays, weddings, corporate events, and any celebration. Contact us at least 3 days in advance for custom orders.</p>
+      </details>
+
+      <details style="background:var(--white);border-radius:12px;padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow-sm);cursor:pointer;">
+        <summary style="font-weight:600;color:var(--dark-brown);font-size:0.95rem;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+          Are there vegetarian/vegan options? <i class="fas fa-plus" style="color:var(--gold);font-size:0.8rem;"></i>
+        </summary>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--text-gray);line-height:1.7;">Many of our coffee drinks can be made with oat, almond, or soy milk. Several pastries are vegetarian-friendly. Please speak with our staff for specific dietary requirements.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">
+              <span class="logo-mark-m">M</span>
+            </div>
+          </div>
+          <div class="footer-logo-text"><h3>MILESTONE</h3><p>Coffee & Pastry Shop</p></div>
+        </div>
+        <p class="footer-desc">Where every sip and every bite becomes a cherished memory.</p>
+        <div class="footer-socials">
+          <div class="footer-social"><i class="fab fa-facebook-f"></i></div>
+          <div class="footer-social"><i class="fab fa-instagram"></i></div>
+          <div class="footer-social"><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Our Menu</a>
+          <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="order.html">Order Now</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Our Menu</h4>
+        <div class="footer-links">
+          <a href="menu.html">Espresso & Coffee</a><a href="menu.html">Cold Beverages</a>
+          <a href="menu.html">Pastries</a><a href="menu.html">Cakes & Desserts</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt footer-contact-icon"></i><span>Sector #06, Road #03, Campus No #03, Milestone College, Bangladesh</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone footer-contact-icon"></i><span>01923767687</span></div>
+        <div class="footer-college">
+          <div class="college-badge">M</div>
+          <p><strong>Milestone College</strong>A sister establishment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Milestone Coffee & Pastry Shop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>
